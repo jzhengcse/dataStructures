@@ -13,7 +13,7 @@ def testLocal():
         elif fnext<fmid:
             h=mid
         step+=1
-    print(int(h))
+    print(round(h))
     print(step)
 if __name__ == '__main__':
     testLocal()
