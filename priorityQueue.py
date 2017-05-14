@@ -1,4 +1,29 @@
 import sys
+import queue as Q
+from functools import total_ordering
+
+
+@total_ordering
+class ListNode(object):
+    def __init__(self,x):
+        self.val=x
+        self.next=None
+    def __lt__(self, other):
+        return self.val<other.val
+
+    #def __eq__(self, other):
+    #    return self.val==other.val
+    #def __cmp__(self, other):
+    #    return cmp(self.val,other.val)
+
+def test_ListNode():
+    q=Q.PriorityQueue()
+    A=ListNode(0)
+    B=ListNode(1)
+    q.put(A)
+    q.put(B)
+    print(q.get().val)
+
 
 
 class priorityQueue:
@@ -94,4 +119,5 @@ def testQ():
 
 
 if __name__ == '__main__':
-    testQ()
+    #testQ()
+    test_ListNode()
