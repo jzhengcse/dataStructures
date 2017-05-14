@@ -119,5 +119,6 @@ def testQ():
 
 
 if __name__ == '__main__':
-    #testQ()
+    testQ()
+    ## add comment
     test_ListNode()
