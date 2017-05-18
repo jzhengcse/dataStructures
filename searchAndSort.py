@@ -24,6 +24,15 @@ def linearSearch(A,key):
         if A[i]==key: return i
     return -1
 
+def insertionSort(A):
+    m=len(A)
+    for i in range(1,m):
+        temp=A[i]
+        j=i-1
+        while j>=0 and A[j]>temp:
+            A[j+1]=A[j]
+            j-=1
+        A[j+1]=temp
 def merge(left,right):
     left+=[sys.maxsize]
     right+=[sys.maxsize]
@@ -144,6 +153,18 @@ class PrimesTestCase(unittest.TestCase):
     def test_is_zero_not_prime(self):
         """Is zero correctly determined not to be prime?"""
         self.assertFalse(is_prime(0))
+    def test_insertion_sort(self):
+        """Is a negative number correctly determined not to be prime?"""
+        for i in range(0,10):
+            size=random.randint(0,20)
+            A=[]
+            for i in range(0,size+1):
+                num=random.randint(0,20)
+                A.append(num)
+            B=A[:]
+            insertionSort(A)
+            B.sort()
+            self.assertEqual(A,B)
     def test_merge_sort(self):
         """Is a negative number correctly determined not to be prime?"""
         for i in range(0,10):

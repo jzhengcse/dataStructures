@@ -181,6 +181,16 @@ def listQueueTest():
     myListQueue.dequeue()
     print(myListQueue.empty())
     myListQueue.print()
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+def printNode(head):
+    cur=head
+    while cur!=None:
+        print(cur.val)
+        cur=cur.next
 
 if __name__ == '__main__':
     listQueueTest()
