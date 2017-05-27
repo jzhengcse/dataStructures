@@ -127,32 +127,9 @@ def radixSortTest():
     return radixSort(A)
 
 
-
-def is_prime(number):
-    """Return True if *number* is prime."""
-    if number<=1: return False
-    for element in range(2,number):
-        if number % element == 0:
-            return False
-
-    return True
-
-def print_next_prime(number):
-    """Print the closest prime number larger than *number*."""
-    index = number
-    while True:
-        index += 1
-        if is_prime(index):
-            print(index)
 class PrimesTestCase(unittest.TestCase):
     """Tests for `primes.py`."""
 
-    def test_is_five_prime(self):
-        """Is five successfully determined to be prime?"""
-        self.assertTrue(is_prime(5))
-    def test_is_zero_not_prime(self):
-        """Is zero correctly determined not to be prime?"""
-        self.assertFalse(is_prime(0))
     def test_insertion_sort(self):
         """Is a negative number correctly determined not to be prime?"""
         for i in range(0,10):
