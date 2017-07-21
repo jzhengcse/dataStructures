@@ -15,10 +15,10 @@ class Tries:
             cur=cur.map[c]
             if i==len(word)-1:
                 cur.validWord=True
-    def display(self,cur):
+    def display(self,cur, level):
         for k,v in cur.map.items():
-            print(k)
-            self.display(v)
+            print(k, level)
+            self.display(v, level+1)
     # def search(self, word):
     #     cur=self.root
     #     for i in range(0,len(word)):

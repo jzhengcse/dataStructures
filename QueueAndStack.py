@@ -1,3 +1,8 @@
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+
 class arrayQueue:
     def __init__(self):
         self.front=0
@@ -74,54 +79,7 @@ def arrayStackTest():
     istack.print()
     istack.pop()
 
-class Node:
-    def __init__(self,val):
-        self.val=val
-        self.next=None
-class linkedList:
-    def __init__(self):
-        self.head=None
 
-    def printNode(self):
-        while self.head!=None:
-            print(self.head.val)
-            self.head=self.head.next
-    def insertHead(self,node):
-        node.next=self.head
-        self.head=node
-    def insertAtIndex(self,i,node):
-        if i==0:
-            self.insertHead(node)
-        else:
-            cur=self.head
-            for k in range(0,i-1):
-                cur=cur.next
-            if cur==None: return
-            node.next=cur.next
-            cur.next=node
-
-    def deleteHead(self,):
-        if self.head==None: return
-        self.head=self.head.next
-
-    def deleteAtIndex(self,i):
-        if i==0:
-            self.deleteHead()
-        else:
-            cur=self.head
-            for i in range(0,i-1):
-                cur=cur.next
-            if cur==None: return
-            if cur.next==None: return
-            cur.next=cur.next.next
-
-def nodeTest():
-    ilist=linkedList()
-    ilist.insertHead(Node(1))
-    ilist.insertAtIndex(1,Node(2))
-    #ilist.deleteHead()
-    ilist.deleteAtIndex(1)
-    ilist.printNode()
 
 class listStack():
     def __init__(self):
@@ -136,13 +94,13 @@ class listStack():
         return self.head==None
 
 def listStackTest():
-    istack=listStack()
-    istack.push(Node(1))
-    istack.push(Node(2))
-    istack.pop()
-    printNode(istack.head)
-    istack.pop()
-    istack.pop()
+    myStack=listStack()
+    myStack.push(Node(1))
+    myStack.push(Node(2))
+    myStack.pop()
+    printNode(myStack.head)
+    myStack.pop()
+    myStack.pop()
 
 class listQueue():
     def __init__(self):
@@ -173,14 +131,14 @@ class listQueue():
     def empty(self):
         return self.head==None
 def listQueueTest():
-    myListQueue=listQueue()
-    myListQueue.enqueue(Node(1))
-    myListQueue.enqueue(Node(2))
-    myListQueue.dequeue()
-    myListQueue.dequeue()
-    myListQueue.dequeue()
-    print(myListQueue.empty())
-    myListQueue.print()
+    myQueue=listQueue()
+    myQueue.enqueue(Node(1))
+    myQueue.enqueue(Node(2))
+    myQueue.dequeue()
+    myQueue.dequeue()
+    myQueue.dequeue()
+    print(myQueue.empty())
+    myQueue.print()
 class ListNode(object):
     def __init__(self, x):
         self.val = x
