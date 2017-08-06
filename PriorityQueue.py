@@ -1,5 +1,4 @@
 import sys
-import queue as Q
 
 class priorityQueue:
 

@@ -8,6 +8,7 @@ def dtob(n):
         n=int(n/2)
     print(list(re))
 
+
 def dtobTest():
     n=7
     dtob(n)
@@ -40,7 +41,8 @@ def allPrime(n):
             prime[i*j]=0
             j+=1
     for i in range(0,n+1):
-        print("{} {}".format(i,prime[i]))
+        if prime[i]==1: print(i)
+
 def allPrimeTest():
     n=20
     allPrime(n)
@@ -56,7 +58,9 @@ def allFactors(n):
             if i!=n/i:
                 l.appendleft(n//i)
     s=s+list(l)
+    print(s)
     return s
+
 def allFactorTest():
     for i in range(1,11):
         print("{} {}".format(i,allFactors(i)))
@@ -64,9 +68,6 @@ def allFactorTest():
 # O(sqrtn) time O(1) space
 def primeFactorization(n):
     print("-"*20)
-    if n==1:
-        print("1-1")
-        return
     i=2
     while i<=int(math.sqrt(n)):
         count=0
@@ -76,12 +77,11 @@ def primeFactorization(n):
         if count>0:
             print("{}-{}".format(i,count))
         i+=1
-    if n!=1:
-        print("{}-1".format(int(n)))
+    print("{}-1".format(int(n)))
 
 
 def primeFactorizationTest():
-    for n in range(1,23):
+    for n in range(2,23):
         primeFactorization(n)
 
 # O(log(ab)) time
@@ -101,6 +101,7 @@ def euclidGCDTest():
 def LCM(a,b):
     lcm=int(a*b/euclidGCD(a,b))
     print(lcm)
+
 def LCMTest():
     a=5*9*2
     b=45
@@ -109,8 +110,8 @@ def LCMTest():
 if __name__ == '__main__':
     # dtobTest()
     # validPrimeTest()
-    allPrimeTest()
+    # allPrimeTest()
     # allFactorTest()
-    # primeFactorizationTest()
+    primeFactorizationTest()
     # euclidGCDTest()
     # LCMTest()
